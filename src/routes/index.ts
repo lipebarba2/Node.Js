@@ -10,6 +10,7 @@ router.use('/voos', voosRouter)
 
 
 router.get('/ping', (req, res) => {
+   
     res.json({ pong: true });
 });
 

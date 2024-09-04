@@ -2,6 +2,7 @@ import express from 'express';
 import helmet from 'helmet';
 import path from 'path'
 import router from './routes';
+import { errorHandler, notFoundRequest } from './routes/errorhandler';
 
 
 const server = express();
@@ -15,6 +16,8 @@ server.use(express.static(path.join(__dirname, '../public')))
 
 
 server.use('/', router)
+server.use(notFoundRequest)
+server.use(errorHandler)
 
 server.listen(3001, () => {
     console.log('Servidor rodando na porta http://localhost:3001');
