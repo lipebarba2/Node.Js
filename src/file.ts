@@ -4,4 +4,4 @@ const exec = async () => {
     await unlink('./teste.txt')
 }
 
-exec()
+exec() 
